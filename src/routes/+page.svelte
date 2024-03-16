@@ -24,6 +24,21 @@
 		) as HTMLCanvasElement;
 		const ctx: CanvasRenderingContext2D = canvas.getContext('2d') as CanvasRenderingContext2D;
 
+		function drawVector(
+			startX: number,
+			startY: number,
+			sizeX: number,
+			sizeY: number,
+			color: string
+		) {
+			ctx.strokeStyle = color;
+			ctx.lineWidth = 2;
+			ctx.beginPath();
+			ctx.moveTo(startX, startY);
+			ctx.lineTo(startX + sizeX, startY + sizeY);
+			ctx.stroke();
+		}
+
 		drawCurve = (time: number) => {
 			const width = canvas.width;
 			const height = canvas.height;
@@ -71,31 +86,27 @@
 			ctx.fill();
 
 			//Draw velocity vector
-			ctx.strokeStyle = '#00FF00';
-			ctx.lineWidth = 2;
-			ctx.beginPath();
-			ctx.moveTo(position.x, position.y);
 			const velocityVectorDivider = Math.max(paramAAmp * paramAAngFreq, paramBAmp * paramBAngFreq);
-			ctx.lineTo(
-				position.x + (velocity.x * paramVelocityVectorSize) / velocityVectorDivider,
-				position.y + (velocity.y * paramVelocityVectorSize) / velocityVectorDivider
+			drawVector(
+				position.x,
+				position.y,
+				(velocity.x * paramVelocityVectorSize) / velocityVectorDivider,
+				(velocity.y * paramVelocityVectorSize) / velocityVectorDivider,
+				'#00FF00'
 			);
-			ctx.stroke();
 
 			//Draw acceleration vector
-			ctx.strokeStyle = '#0000FF';
-			ctx.lineWidth = 2;
-			ctx.beginPath();
-			ctx.moveTo(position.x, position.y);
 			const accelerationVectorDivider = Math.max(
 				paramAAmp * paramAAngFreq * paramAAngFreq,
 				paramBAmp * paramBAngFreq * paramBAngFreq
 			);
-			ctx.lineTo(
-				position.x + (acceleration.x * paramAccelerationVectorSize) / accelerationVectorDivider,
-				position.y + (acceleration.y * paramAccelerationVectorSize) / accelerationVectorDivider
+			drawVector(
+				position.x,
+				position.y,
+				(acceleration.x * paramAccelerationVectorSize) / accelerationVectorDivider,
+				(acceleration.y * paramAccelerationVectorSize) / accelerationVectorDivider,
+				'#0000FF'
 			);
-			ctx.stroke();
 
 			ctx.restore();
 		};
@@ -106,10 +117,9 @@
 	}
 </script>
 
-<h1>Krzywe Lissajous</h1>
-
 <canvas id="lissajous-canvas" width="500" height="500"> </canvas>
-<br />
+
+<h1>Krzywe Lissajous</h1>
 
 <div>
 	<label for="param-a-amp">A = </label>
@@ -212,8 +222,8 @@
 <style>
 	#lissajous-canvas {
 		border: 1px solid black;
-		width: 50vw;
-		height: 50vw;
+		width: min(60vw, 95vh);
+		height: min(60vw, 95vh);
 		float: right;
 	}
 </style>
