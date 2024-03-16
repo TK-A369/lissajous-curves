@@ -11,7 +11,7 @@
 	let paramAccelerationVectorSize: number = 100.0;
 
 	let paramT: number = 0;
-	let paramStep: number = 0.1;
+	let paramStep: number = 0.05;
 	let paramSpeed: number = 1;
 	$: console.log(`t = ${paramT}`);
 	let timeRunning: boolean = false;
@@ -33,9 +33,21 @@
 		) {
 			ctx.strokeStyle = color;
 			ctx.lineWidth = 2;
+			ctx.lineCap = 'round';
 			ctx.beginPath();
 			ctx.moveTo(startX, startY);
 			ctx.lineTo(startX + sizeX, startY + sizeY);
+
+			const arrowTipLength = 4;
+			const vectorDirection = Math.atan2(sizeY, sizeX);
+			const arrowTip1X = Math.cos(Math.PI + vectorDirection - Math.PI / 4) * arrowTipLength;
+			const arrowTip1Y = Math.sin(Math.PI + vectorDirection - Math.PI / 4) * arrowTipLength;
+			const arrowTip2X = Math.cos(Math.PI + vectorDirection + Math.PI / 4) * arrowTipLength;
+			const arrowTip2Y = Math.sin(Math.PI + vectorDirection + Math.PI / 4) * arrowTipLength;
+
+			ctx.lineTo(startX + sizeX + arrowTip1X, startY + sizeY + arrowTip1Y);
+			ctx.moveTo(startX + sizeX, startY + sizeY);
+			ctx.lineTo(startX + sizeX + arrowTip2X, startY + sizeY + arrowTip2Y);
 			ctx.stroke();
 		}
 
@@ -72,6 +84,7 @@
 			// Draw Lissajous curve
 			ctx.strokeStyle = '#000000';
 			ctx.lineWidth = 2;
+			ctx.lineCap = 'round';
 			ctx.beginPath();
 			coords.forEach((point) => {
 				ctx.lineTo(point.x, point.y);
