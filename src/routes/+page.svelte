@@ -205,7 +205,7 @@
 	<label for="param-time">t = </label>
 	<input type="number" id="param-t" name="param-t" contenteditable="true" bind:value={paramT} />
 	<br />
-	<input type="range" id="param-t-slider" min={0} max={10} step={paramStep} bind:value={paramT} />
+	<input type="range" id="param-t-slider" min={0} max={20} step={paramStep} bind:value={paramT} />
 	<input
 		type="button"
 		id="param-time-running"
