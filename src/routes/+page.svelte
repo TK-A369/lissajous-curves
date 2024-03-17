@@ -264,6 +264,11 @@
 	wartość, tym dokładniejsza krzywa. Niska jakość może być szczególnie zauważalna gdy a i/lub b są
 	wysokie, a krok niski.
 </p>
+<p>Przycisk start/stop włącza i wyłącza rysowanie krzywej o danych parametrach.</p>
+<p>
+	Przed modyfikacją parametrów zaleca się zatrzymanie rysowania, a po niej ustawienie t na 0
+	(używając pola tekstowego lub suwaka) i następnie wznowienie rysowania.
+</p>
 
 <p>Czerwony punkt wskazuje gdzie obecnie jest rysowana krzywa.</p>
 <p>Wektor prędkości jest zaznaczony na zielono.</p>
