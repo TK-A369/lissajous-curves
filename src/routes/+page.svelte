@@ -278,6 +278,8 @@
 <p>Wektor prędkości jest zaznaczony na zielono.</p>
 <p>Wektor przyspieszenia jest zaznaczony na niebiesko.</p>
 
+<p><a href="https://github.com/TK-A369/lissajous-curves">Kod źródłowy</a></p>
+
 <style>
 	p,
 	h1,
