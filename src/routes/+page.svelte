@@ -270,6 +270,12 @@
 <p>Wektor przyspieszenia jest zaznaczony na niebiesko.</p>
 
 <style>
+	p,
+	h1,
+	label {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
 	#lissajous-canvas {
 		border: 1px solid black;
 		width: min(60vw, 95vh);
