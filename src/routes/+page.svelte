@@ -254,6 +254,21 @@
 	<br />
 </div>
 
+<p>x(t) = A*sin(a*t+ẟ)</p>
+<p>y(t) = B*sin(b*t)</p>
+
+<p>Powyżej można modyfikować parametry krzywej Lissajous.</p>
+<p>Zmienna prękość wpływa na to, jak szybko rysowana jest krzywa.</p>
+<p>
+	Natomiast zmienna krok reguluje co jaki czas obliczane są współrzędne krzywej. Im mniejsza
+	wartość, tym dokładniejsza krzywa. Niska jakość może być szczególnie zauważalna gdy a i/lub b są
+	wysokie, a krok niski.
+</p>
+
+<p>Czerwony punkt wskazuje gdzie obecnie jest rysowana krzywa.</p>
+<p>Wektor prędkości jest zaznaczony na zielono.</p>
+<p>Wektor przyspieszenia jest zaznaczony na niebiesko.</p>
+
 <style>
 	#lissajous-canvas {
 		border: 1px solid black;
