@@ -130,6 +130,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Krzywe Lissajous</title>
+</svelte:head>
+
 <canvas id="lissajous-canvas" width="500" height="500"> </canvas>
 
 <h1>Krzywe Lissajous</h1>
