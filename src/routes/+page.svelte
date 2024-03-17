@@ -140,6 +140,9 @@
 		type="number"
 		id="param-a-amp"
 		name="param-a-amp"
+		min="0"
+		max=""
+		step="any"
 		contenteditable="true"
 		bind:value={paramAAmp}
 	/>
@@ -149,6 +152,9 @@
 		type="number"
 		id="param-a-ang-freq"
 		name="param-a-ang-freq"
+		min="0"
+		max=""
+		step="any"
 		contenteditable="true"
 		bind:value={paramAAngFreq}
 	/>
@@ -159,6 +165,9 @@
 		type="number"
 		id="param-b-amp"
 		name="param-b-amp"
+		min="0"
+		max=""
+		step="any"
 		contenteditable="true"
 		bind:value={paramBAmp}
 	/>
@@ -168,16 +177,22 @@
 		type="number"
 		id="param-b-ang-freq"
 		name="param-b-ang-freq"
+		min="0"
+		max=""
+		step="any"
 		contenteditable="true"
 		bind:value={paramBAngFreq}
 	/>
 	<br />
 
-	<label for="param-delta">delta = </label>
+	<label for="param-delta">ẟ = </label>
 	<input
 		type="number"
 		id="param-delta"
 		name="param-delta"
+		min="0"
+		max=""
+		step="any"
 		contenteditable="true"
 		bind:value={paramDelta}
 	/>
@@ -185,7 +200,8 @@
 
 	<label for="param-time">t = </label>
 	<input type="number" id="param-t" name="param-t" contenteditable="true" bind:value={paramT} />
-	<input type="range" id="param-t-slider" min={0} max={10} step={1} bind:value={paramT} />
+	<br />
+	<input type="range" id="param-t-slider" min={0} max={10} step={paramStep} bind:value={paramT} />
 	<input
 		type="button"
 		id="param-time-running"
@@ -211,23 +227,29 @@
 	/>
 	<br />
 
-	<label for="param-step">time_step = </label>
-	<input
-		type="number"
-		id="param-step"
-		name="param-step"
-		contenteditable="true"
-		bind:value={paramStep}
-	/>
-	<br />
-
-	<label for="param-speed">speed = </label>
+	<label for="param-speed">prędkość = </label>
 	<input
 		type="number"
 		id="param-speed"
 		name="param-speed"
+		min="0"
+		max=""
+		step="any"
 		contenteditable="true"
 		bind:value={paramSpeed}
+	/>
+	<br />
+
+	<label for="param-step">krok = </label>
+	<input
+		type="number"
+		id="param-step"
+		name="param-step"
+		min="0"
+		max=""
+		step="any"
+		contenteditable="true"
+		bind:value={paramStep}
 	/>
 	<br />
 </div>
